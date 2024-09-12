@@ -21,10 +21,9 @@ export const Hero = () => {
             include <span className="font-bold">Depression, Anxiety, Panic Disorders, Insomnia, ADHD, PTSD, Bipolar Disorder </span> and many more.
             </p>
             <div className="flex gap-1 items-center mt-[30px]">
-              <button className="btn btn-primary">Book an Appointment</button>
+              <button className="btn btn-primary">Book An Appointment</button>
               {/* <button className="btn btn-text gap-1">
-                <span>Learn more</span>
-                <ArrowIcon className="h-5 w-5" />
+                <span className="text-lg">Tel: (972) 525-0134</span>
               </button> */}
             </div>
           </div>

@@ -23,7 +23,7 @@ export const Header = () => {
               <a href="#">Practice Areas</a>
               <a href="#">Faq</a>
               <a href="#">Help</a>
-              <button className="bg-black text-white  px-4 py-2 rounded-lg font-medium inline-flex align-item justify-center tracking-tight">Book an Appointment</button>
+              <button className="bg-black text-white  px-4 py-2 rounded-lg font-medium inline-flex align-item justify-center tracking-tight">Book An Appointment</button>
             </nav>
           </div>
         </div>
