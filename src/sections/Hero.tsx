@@ -1,6 +1,7 @@
 import ArrowIcon from '@/assets/arrow-right.svg';
 import cogImage from '@/assets/remi.png';
 import happy4 from '@/assets/happy.avif';
+import { motion } from 'framer-motion';
 
 import Image from 'next/image';
 
@@ -34,10 +35,19 @@ export const Hero = () => {
           {/* Image Section */}
           <div className="mt-10 md:mt-0 md:w-1/2 md:flex md:justify-center">
             <div className="relative md:h-[400px] lg:h-[500px] xl:h-[648px]">
-              <Image
-                src={happy4}
+              <motion.img
+                src={happy4.src}
                 alt="Cog Image"
                 className="h-full w-auto max-w-none md:absolute rounded-full"
+                animate={{
+                    translateY: [-30, 30],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  duration: 3,
+                  ease: "easeInOut"
+                }}
               />
             </div>
           </div>
