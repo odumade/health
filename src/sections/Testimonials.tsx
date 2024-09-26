@@ -73,38 +73,38 @@ const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
-const TestimonialsColumn = (props: { className?: string; testimonials: typeof testimonials; duration?: number } ) => (
-  <div className="props.className">
-  <motion.div animate={{
-    translateY: "-50%",
-  }}
-  transition={{
-    duration: props.duration || 25,
-    repeat: Infinity,
-    ease: 'linear',
-    repeatType: 'loop',
-  }}
-  className="flex flex-col gap-6">
-  {[...new Array(2)].fill(0).map((_, index) => (
-    <React.Fragment key={index}>
-        {props.testimonials.map(( { text, imageSrc, name, username } ) => (
-        <div className="card">
-          <div>{text}</div>
-          <div className="flex items-center gap-2 mt-5">
-            <Image src={imageSrc} width={40} height={40} alt="name" className="h-10 w-10 rounded-full" />
-            <div className="flex flex-col">
-              <div className="font-medium tracking-tight leading-5">{name}</div>
-              <div className="leading-5 tracking-tight">{username}</div>
+const TestimonialsColumn = (props: { className?: string; testimonials: typeof testimonials; duration?: number }) => (
+  <div className={props.className}>
+    <motion.div
+      animate={{ translateY: "-50%" }}
+      transition={{
+        duration: props.duration || 25,
+        repeat: Infinity,
+        ease: 'linear',
+        repeatType: 'loop',
+      }}
+      className="flex flex-col gap-6"
+    >
+      {[...new Array(2)].fill(0).map((_, index) => (
+        <React.Fragment key={index}>
+          {props.testimonials.map(({ text, imageSrc, name, username }, testimonialIndex) => (
+            <div className="card" key={`${name}-${testimonialIndex}`}>
+              <div>{text}</div>
+              <div className="flex items-center gap-2 mt-5">
+                <Image src={imageSrc} width={40} height={40} alt={name} className="h-10 w-10 rounded-full" />
+                <div className="flex flex-col">
+                  <div className="font-medium tracking-tight leading-5">{name}</div>
+                  <div className="leading-5 tracking-tight">{username}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          ))}
+        </React.Fragment>
       ))}
-    </React.Fragment>
-  ))}
+    </motion.div>
+  </div>
+);
 
-</motion.div>
-</div>
-)
 
 
 export const Testimonials = () => {
